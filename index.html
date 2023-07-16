@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Weather Application</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <h1>Weather Application</h1>
+        <div class="location">
+            <label for="location-input">Location:</label>
+            <input type="text" id="location-input" v-model="location" placeholder="Enter a location">
+            <button @click="getWeather">Get Weather</button>
+        </div>
+        <div v-if="weatherData">
+            <h2>{{ weatherData.name }}</h2>
+            <p>Temperature: {{ weatherData.main.temp }}°C</p>
+            <p>Weather: {{ weatherData.weather[0].description }}</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
